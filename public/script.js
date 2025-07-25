@@ -192,12 +192,12 @@ async function playAudio (LeftFile = 'LowLeft.flac', RightFile = 'HighLeft.flac'
 let leftFileSource = 'HighLeft.flac';
 let rightFileSource = 'LowRight.flac';
 document.getElementById('volume-slider').addEventListener('change', ()=>{if (gainNode) gainNode.gain.value = document.getElementById('volume-slider').value;});
-document.getElementById('position-slider').addEventListener('change', () => playAudio (leftFileSource, rightFileSource));
+document.getElementById('position-slider').addEventListener('change', () => {stopAudio(); playAudio (leftFileSource, rightFileSource)});
 
-document.getElementById('play-together-left-high-right-low').onclick = () => {leftFileSource = 'HighLeft.flac'; rightFileSource = 'LowRight.flac';playAudio (leftFileSource, rightFileSource);};
-document.getElementById('play-together-left-low-right-high').onclick = () => {leftFileSource = 'LowLeft.flac'; rightFileSource = 'HighRight.flac';playAudio (leftFileSource, rightFileSource);};
-document.getElementById('play-together-both-high').onclick = () => {leftFileSource = 'HighLeft.flac'; rightFileSource = 'HighRight.flac';playAudio (leftFileSource, rightFileSource);};
-document.getElementById('play-together-both-low').onclick = () => {leftFileSource = 'LowLeft.flac'; rightFileSource = 'LowRight.flac';playAudio (leftFileSource, rightFileSource);};
+document.getElementById('play-together-left-high-right-low').onclick = () => {stopAudio();leftFileSource = 'HighLeft.flac'; rightFileSource = 'LowRight.flac';playAudio (leftFileSource, rightFileSource);};
+document.getElementById('play-together-left-low-right-high').onclick = () => {stopAudio();leftFileSource = 'LowLeft.flac'; rightFileSource = 'HighRight.flac';playAudio (leftFileSource, rightFileSource);};
+document.getElementById('play-together-both-high').onclick = () => {stopAudio();leftFileSource = 'HighLeft.flac'; rightFileSource = 'HighRight.flac';playAudio (leftFileSource, rightFileSource);};
+document.getElementById('play-together-both-low').onclick = () => {stopAudio();leftFileSource = 'LowLeft.flac'; rightFileSource = 'LowRight.flac';playAudio (leftFileSource, rightFileSource);};
 
 function stopAudio() {
 	try {

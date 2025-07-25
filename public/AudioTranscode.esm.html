@@ -9,18 +9,18 @@
     <h1> Flac/Wav vs MP3 comparison website</h1>
     <div style = "display: flex; flex-flow: row; width: 100%;">
 		<div style = "flex-basis:33%;">
-			<h2 style = "margin-left: 5vw;margin-right: 3vw; margin-bottom: 3vh;"> Ever wonder if you can hear the difference between high vs lowres music? </h2>
-			<p style = "margin-left: 5vw;margin-right: 3vw;">
+			<h2 style = "margin-left: 5vw;margin-right: 3vw; margin-bottom: 3vh;"> Ever wonder if you can hear the difference <br> between high vs lowres music? Your music? </h2>
+			<p style = "margin-left: 5vw;margin-right: 7vw;">
 				Then you have come to the right place.
 				<br> Drop your favourite music in, and compare your left and right ear for the difference.
-				<br> (Website not designed for mobile though, pressing "Convert" will eat 11mb of data, so brace yourself.)
+				<br> (Website not designed for mobile though, pressing "Convert" will eat 11mb of data on the first run to load ffmpeg, so brace yourself.)
 			</p>
 			
 			<p style = "margin-left: 5vw;margin-right: 3vw;"> (This is just a fun little demo page, please no hackerino my PiCi. 
 				<br> &nbsp;&nbsp;Any inquiry (or security backdoor notification),
 				<br> &nbsp;&nbsp;please drop me an email at: giahuynh.thiet@gmail.com) 
 				<br> <br>Also... <a href = "https://gia-huynh.github.io/" target = "_blank"> https://gia-huynh.github.io/</a>
-				<br>
+				<br> Gimme a job.
 				<br>
 			</p>
 		</div>
@@ -74,17 +74,20 @@
 
 			<!--audio id="output-audio" controls></audio><br/-->
 			<h2> FAQ </h2>
-			<p> "Why?" <br>
+			<p style = "margin-right: 7vw;"> "Why?" <br>
 				Site like https://abx.digitalfeed.net/tone.html does allow you to do A/B testing with the same purpose as my site,<br> but they don't have the option to upload your own music. 
 				<br> <br> "Does it really work? I can't hear a difference."
-				<br> Enter some low bitrate number (eg. 50) and you'll see the difference clearly.
+				<br> Enter some low bitrate number (eg. 50) and you'll hear the difference clearly.
+				<br> Personally at 96kbps I can easily tell which one is which, easily. 
+				<br> 128kbps maybe, 320kbps not so sure anymore lol.
+				<br> <br> "What if left and right channels are different?"
+				<br> Same channel were taken (either Left channel only or Right only) so it ensure that both side you are hearing are from the same source, the difference is just from the encoding bitrate.
 				<br> <br> "Are you absolutely sure that it's working?"
-				<br> I've personally download the LeftHigh_RightLow.flac file and open Audacity, Invert one channel and mix them together to hear the clipping. 
-				<br> Spek does not display the waveform accurately for both channel, had to use Audacity waveform to confirm.
+				<br> Look at the info panel on the right side -->
 				<br> <br> "Why so many files?"
 				<br> Spek does not display the waveform accurately for both channel, I got confused and had to generate many files to experiment, now too lazy to clean them up.
 				<br> <br> "Any more features in the future?"
-				<br> Hell nah, pay me lol, I'll dump this to github, go and implement it yourself.
+				<br> Hell nah, pay me lol, I'll dump this to github, fork it and implement the feature yourself: https://github.com/Gia-Huynh/Audio-Comparison.
 			</p>
 		</div>
 		
@@ -93,7 +96,7 @@
 			<img src = "Proof.JPG" style = "max-width: 90%;">
 			<p> Download the LeftHigh_RightLow.flac and open it with Audacity,
 				<br> change to Waveform view mode to see the clipping at 16kHz.
-				<br><br> Spek didn't work for me though, so skip that.
+				<br><br> Spek does not display the waveform accurately for both channel, had to use Audacity waveform to confirm.
 				<br><br> Also you can split them to mono, invert one channel, 
 				<br> then downmix combining them to hear the difference of both channel.
 			</p>
