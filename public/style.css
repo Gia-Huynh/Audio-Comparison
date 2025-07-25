@@ -1,0 +1,22 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222222;
+}
+p, label, a{font-size: 1.5vh; color: white;}
+h1, h2 {
+	margin: 5vh;
+	 color: white;
+}
+h3 {color:white;}
+input, button{
+	font-size: 1.5vh;
+	padding: 0.5vh;
+	margin: 4px;
+}

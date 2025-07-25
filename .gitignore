@@ -1,0 +1,3 @@
+*.tgz
+public/assets
+node_modules/

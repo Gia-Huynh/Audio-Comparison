@@ -1,0 +1,103 @@
+<html>
+  <head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+	<script type="module" src="script.js"></script>
+	<title>Flac/Mp3 comparison Page</title>
+  </head>
+  <body>
+    <h1> Flac/Wav vs MP3 comparison website</h1>
+    <div style = "display: flex; flex-flow: row; width: 100%;">
+		<div style = "flex-basis:33%;">
+			<h2 style = "margin-left: 5vw;margin-right: 3vw; margin-bottom: 3vh;"> Ever wonder if you can hear the difference between high vs lowres music? </h2>
+			<p style = "margin-left: 5vw;margin-right: 3vw;">
+				Then you have come to the right place.
+				<br> Drop your favourite music in, and compare your left and right ear for the difference.
+				<br> (Website not designed for mobile though, pressing "Convert" will eat 11mb of data, so brace yourself.)
+			</p>
+			
+			<p style = "margin-left: 5vw;margin-right: 3vw;"> (This is just a fun little demo page, please no hackerino my PiCi. 
+				<br> &nbsp;&nbsp;Any inquiry (or security backdoor notification),
+				<br> &nbsp;&nbsp;please drop me an email at: giahuynh.thiet@gmail.com) 
+				<br> <br>Also... <a href = "https://gia-huynh.github.io/" target = "_blank"> https://gia-huynh.github.io/</a>
+				<br>
+				<br>
+			</p>
+		</div>
+		<div style = "flex-basis:40%">
+			<label for="bitrate">1) Enter "low quality" Bitrate (default 128 kbps):</label>
+			<input type="number" id="bitrate" placeholder="128"><br/>
+			<p> 2) Choose your audio file here, no drag/drop though, no dev money to implement that. </p>
+			<input type="file" id="uploader" accept="audio/*">
+			<div style = "display: flex; flex-flow: column;">
+				<p> 3) Press Convert button and wait 30 seconds. </p>
+				<div style = "display: flex; flex-flow: row; font-color:white;">
+					<div style = "margin-right: 1vw;">
+						<button id="start-convert">Start Convert</button>
+						<p id="message"></p>
+						<p id="progress-message"></p>
+					</div>
+					<div>
+						<a id="download-mp3" download="output.mp3" style="display:none">Download LowRes MP3</a><br/>
+						<a id="download-high-left" download="HighLeft.flac" style="display:none">Download HighLeft.flac</a><br/>
+						<a id="download-high-right" download="HighRight.flac" style="display:none">Download HighRight.flac</a><br/>
+						<a id="download-low-left" download="LowLeft.flac" style="display:none">Download LowLeft.flac</a><br/>
+						<a id="download-low-right" download="LowRight.flac" style="display:none">Download LowRight.flac</a><br/>
+						<a id="Upsampled_LowBitrate" download="Upsampled_LowBitrate.flac" style="display:none"> Download Upsampled_LowBitrate.flac</a><br/>
+						<a id="download-low-right-high-left" download="LeftHigh_RightLow.flac" style="display:none">[Experimental] Download LeftHigh_RightLow.flac</a><br/>
+						<a id="download-low-left-high-right" download="LeftLow_RightHigh.flac" style="display:none">[Experimental] Download LeftLow_RightHigh.flac</a><br/>
+					</div>
+				</div>
+			</div>
+			<div style = "display: flex; flex-flow: row; ">
+				<div style = "padding-right: 3vw;">
+					<p> 4) Volume select </p>
+					<input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1" />
+				</div>
+				<div>
+					<p> 4.5) (Optionally) Select starting position of playback <br> (You can select this mid-playback 😎)</p>
+					<input id="position-slider" type="range" min="0" max="1" step="0.01" value="0" />
+				</div>
+			</div>
+			<p> 5) Listen to them side-by-side-by-side </p>
+			<div style = "width: 100%">
+			<button id="play-together-left-high-right-low">Left Original, right low quality</button>
+			<button id="play-together-left-low-right-high">Left low quality, right Original</button>
+			</div>
+			<div style = "width: 100%">
+				<button id="play-together-both-high">Both Original</button>
+				<button id="play-together-both-low">Both Low Quality</button>
+			</div>
+			<button id="stop-playback">Stop</button>
+			<!--button onclick="playLeft();">Play Left Only</button-->
+			<!--button onclick="playRight();">Play Right Only</button-->
+
+			<!--audio id="output-audio" controls></audio><br/-->
+			<h2> FAQ </h2>
+			<p> "Why?" <br>
+				Site like https://abx.digitalfeed.net/tone.html does allow you to do A/B testing with the same purpose as my site,<br> but they don't have the option to upload your own music. 
+				<br> <br> "Does it really work? I can't hear a difference."
+				<br> Enter some low bitrate number (eg. 50) and you'll see the difference clearly.
+				<br> <br> "Are you absolutely sure that it's working?"
+				<br> I've personally download the LeftHigh_RightLow.flac file and open Audacity, Invert one channel and mix them together to hear the clipping. 
+				<br> Spek does not display the waveform accurately for both channel, had to use Audacity waveform to confirm.
+				<br> <br> "Why so many files?"
+				<br> Spek does not display the waveform accurately for both channel, I got confused and had to generate many files to experiment, now too lazy to clean them up.
+				<br> <br> "Any more features in the future?"
+				<br> Hell nah, pay me lol, I'll dump this to github, go and implement it yourself.
+			</p>
+		</div>
+		
+		<div style = "flex-basis:20%; display: flex; flex-flow: column; align-items: left;">
+			<h2 style = "margin-bottom: 1vh;"> Proof of file correctness <br> ft. Audacity Waveform </h2>
+			<img src = "Proof.JPG" style = "max-width: 90%;">
+			<p> Download the LeftHigh_RightLow.flac and open it with Audacity,
+				<br> change to Waveform view mode to see the clipping at 16kHz.
+				<br><br> Spek didn't work for me though, so skip that.
+				<br><br> Also you can split them to mono, invert one channel, 
+				<br> then downmix combining them to hear the difference of both channel.
+			</p>
+		</div>
+	</div>
+    </body>
+</html>
