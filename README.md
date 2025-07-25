@@ -1,5 +1,6 @@
 Upload your own music, compare them left/right.
-This template is taken from javascript ffmpeg github page.
+
+The template below is taken from javascript ffmpeg github page.
 
 # Vanilla / Browser Examples
 ## Setup
