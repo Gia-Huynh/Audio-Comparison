@@ -199,6 +199,9 @@ document.getElementById('play-together-left-low-right-high').onclick = () => {st
 document.getElementById('play-together-both-high').onclick = () => {stopAudio();leftFileSource = 'HighLeft.flac'; rightFileSource = 'HighRight.flac';playAudio (leftFileSource, rightFileSource);};
 document.getElementById('play-together-both-low').onclick = () => {stopAudio();leftFileSource = 'LowLeft.flac'; rightFileSource = 'LowRight.flac';playAudio (leftFileSource, rightFileSource);};
 
+document.getElementById('play-together-left-high-right-low-LeftChannel').onclick = () => {stopAudio();leftFileSource = 'HighLeft.flac'; rightFileSource = 'LowLeft.flac';playAudio (leftFileSource, rightFileSource);};
+document.getElementById('play-together-left-low-right-high-RightChannel').onclick = () => {stopAudio();leftFileSource = 'LowLeft.flac'; rightFileSource = 'HighLeft.flac';playAudio (leftFileSource, rightFileSource);};
+
 function stopAudio() {
 	try {
 		leftSource?.stop();

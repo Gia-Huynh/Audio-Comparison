@@ -56,17 +56,21 @@
 				</div>
 				<div>
 					<p> 4.5) (Optionally) Select starting position of playback <br> (You can select this mid-playback 😎)</p>
-					<input id="position-slider" type="range" min="0" max="1" step="0.01" value="0" />
+					<input style = "width: 90%" id="position-slider" type="range" min="0" max="1" step="0.001" value="0" />
 				</div>
 			</div>
 			<p> 5) Listen to them side-by-side-by-side </p>
 			<div style = "width: 100%">
-			<button id="play-together-left-high-right-low">Left Original, right low quality</button>
-			<button id="play-together-left-low-right-high">Left low quality, right Original</button>
+				<button id="play-together-left-high-right-low">Left Original, right low quality</button>
+				<button id="play-together-left-low-right-high">Left low quality, right Original</button>
 			</div>
 			<div style = "width: 100%">
 				<button id="play-together-both-high">Both Original</button>
 				<button id="play-together-both-low">Both Low Quality</button>
+			</div>
+			<div style = "width: 100%">
+				<button id="play-together-left-high-right-low-LeftChannel">Left Ear Original, Right Ear Low Quality (Both use same Left channel source)</button>
+				<button id="play-together-left-low-right-high-RightChannel">Left Ear Low Quality, Right Ear Original (Both use same Left channel source)</button>
 			</div>
 			<button id="stop-playback">Stop</button>
 			<!--button onclick="playLeft();">Play Left Only</button-->
@@ -75,7 +79,7 @@
 			<!--audio id="output-audio" controls></audio><br/-->
 			<h2> FAQ </h2>
 			<p style = "margin-right: 7vw;"> "Why?" <br>
-				Site like https://abx.digitalfeed.net/tone.html does allow you to do A/B testing with the same purpose as my site,<br> but they don't have the option to upload your own music. 
+				Site like abx.digitalfeed.net does allow you to do A/B testing with the same purpose as my site,<br> but they don't have the option to upload your own music. 
 				<br> <br> "Does it really work? I can't hear a difference."
 				<br> Enter some low bitrate number (eg. 50) and you'll hear the difference clearly.
 				<br> Personally at 96kbps I can easily tell which one is which, easily. 
@@ -87,13 +91,13 @@
 				<br> <br> "Why so many files?"
 				<br> Spek does not display the waveform accurately for both channel, I got confused and had to generate many files to experiment, now too lazy to clean them up.
 				<br> <br> "Any more features in the future?"
-				<br> Hell nah, pay me lol, I'll dump this to github, fork it and implement the feature yourself: https://github.com/Gia-Huynh/Audio-Comparison.
+				<br> Hell nah, pay me lol, I'll dump this to github, fork it and implement the feature yourself: <a href = "https://github.com/Gia-Huynh/Audio-Comparison" target = "_blank"> Github Link</a>.
 			</p>
 		</div>
 		
 		<div style = "flex-basis:20%; display: flex; flex-flow: column; align-items: left;">
 			<h2 style = "margin-bottom: 1vh;"> Proof of file correctness <br> ft. Audacity Waveform </h2>
-			<img src = "Proof.JPG" style = "max-width: 90%;">
+			<img src = "Proof.JPG" style = "max-width: 80%;">
 			<p> Download the LeftHigh_RightLow.flac and open it with Audacity,
 				<br> change to Waveform view mode to see the clipping at 16kHz.
 				<br><br> Spek does not display the waveform accurately for both channel, had to use Audacity waveform to confirm.
