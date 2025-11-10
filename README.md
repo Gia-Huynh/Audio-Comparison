@@ -1,8 +1,9 @@
+# High - Low bitrate Audio Comparison Page
 Upload your own music, compare them left/right.
+Website is hosted at [https://audio.thietgia.com/](https://audio.thietgia.com/)
+![Front Page image](GithubResources/Front%20Page.PNG "Front Page image")
 
 The template below is taken from javascript ffmpeg github page.
-
-![Front Page image]("GithubResources/Front Page.PNG" "Front Page image")
 # Vanilla / Browser Examples
 ## Setup
 
