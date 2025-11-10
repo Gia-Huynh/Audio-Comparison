@@ -2,6 +2,7 @@ Upload your own music, compare them left/right.
 
 The template below is taken from javascript ffmpeg github page.
 
+![Front Page image]("GithubResources/Front Page.PNG" "Front Page image")
 # Vanilla / Browser Examples
 ## Setup
 
